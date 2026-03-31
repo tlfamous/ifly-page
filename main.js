@@ -7,6 +7,40 @@ const widgetConfig = {
     "https://storage.googleapis.com/c7o-yagi5wlved-cdn/ifly/logos/mmy0kbo41w_iFLY%20Logopng",
 };
 
+const launcherOpenSvg = `
+  <svg viewBox="0 0 176 40" width="176" height="40" aria-hidden="true">
+    <rect width="176" height="40" rx="20" fill="none" />
+    <path
+      fill="currentColor"
+      d="M24.5 11c-3.03 0-5.5 2.47-5.5 5.5v3c0 3.03 2.47 5.5 5.5 5.5S30 22.53 30 19.5v-3c0-3.03-2.47-5.5-5.5-5.5Zm0 2c1.93 0 3.5 1.57 3.5 3.5v3c0 1.93-1.57 3.5-3.5 3.5S21 21.43 21 19.5v-3c0-1.93 1.57-3.5 3.5-3.5Z"
+    />
+    <path
+      fill="currentColor"
+      d="M32.75 18.5a1 1 0 0 0-1 1 7.25 7.25 0 0 1-14.5 0 1 1 0 0 0-2 0 9.26 9.26 0 0 0 8.25 9.2V32a1 1 0 1 0 2 0v-3.3a9.26 9.26 0 0 0 8.25-9.2 1 1 0 0 0-1-1Z"
+    />
+    <text
+      x="54"
+      y="25"
+      fill="currentColor"
+      font-family="Inter, system-ui, sans-serif"
+      font-size="14"
+      font-weight="600"
+      letter-spacing="0"
+    >
+      Chat with iFLY
+    </text>
+  </svg>
+`;
+
+const launcherCloseSvg = `
+  <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+    <path
+      fill="currentColor"
+      d="M6.4 5 5 6.4 10.6 12 5 17.6 6.4 19l5.6-5.6 5.6 5.6 1.4-1.4-5.6-5.6L19 6.4 17.6 5 12 10.6 6.4 5Z"
+    />
+  </svg>
+`;
+
 const customMicIconSvg = `
   <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true">
     <path
@@ -39,12 +73,18 @@ function mountBotWidget() {
     return;
   }
 
+  // Shadow DOM-compatible approach:
+  // use the widget's supported config attributes here, and use CSS variables
+  // plus exported ::part(...) hooks in styles.css for the rest of the theme.
   const element = document.createElement("enegelai-bot");
   element.setAttribute("name", widgetConfig.name);
   element.setAttribute("url", widgetConfig.url);
   element.setAttribute("org-id", widgetConfig.orgId);
   element.setAttribute("bot-id", widgetConfig.botId);
   element.setAttribute("logo-url", widgetConfig.logoUrl);
+  element.setAttribute("popup-logo-url", widgetConfig.logoUrl);
+  element.setAttribute("anchor-open-svg", launcherOpenSvg.trim());
+  element.setAttribute("anchor-close-svg", launcherCloseSvg.trim());
   document.body.appendChild(element);
 }
 
