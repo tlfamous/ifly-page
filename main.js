@@ -9,24 +9,34 @@ const widgetConfig = {
     "https://storage.googleapis.com/c7o-yagi5wlved-cdn/ifly/logos/mmy0kbo41w_iFLY%20Logopng",
 };
 
+const launcherBadgeLogoUrl = widgetConfig.popupLogoUrl;
+
 const launcherOpenSvg = `
   <svg viewBox="0 0 64 64" width="64" height="64" aria-hidden="true">
-    <circle cx="32" cy="32" r="32" fill="none" />
-    <g transform="translate(6 10) scale(0.6)">
-      <path
-        fill="#ef3b3f"
-        d="M39 30c0-8.5 6.7-15.5 15-15.5c6 0 11.2 3.2 13.8 8.1c4.9-2 12.5-7.3 21-16.6c0.8-0.9 2.2 0.2 1.5 1.2C85.7 18 82.5 26 80.8 33.4c-4.7 21.2-19.9 32.1-43.3 32.1c-10 0-20.6-2.3-31.7-7.1c-1.4-0.6-0.8-2.6 0.7-2.3c6.4 1.4 12.2 2 17.3 2c17.2 0 28.6-6.8 34.2-20.5c-1.4 3.4-4.9 5.8-8.9 5.8C43.7 43.4 39 37.4 39 30Z"
-      />
-      <circle cx="55" cy="17" r="9.5" fill="#ef3b3f" />
-    </g>
+    <defs>
+      <clipPath id="ifly-launcher-clip">
+        <circle cx="32" cy="32" r="30" />
+      </clipPath>
+    </defs>
+    <circle cx="32" cy="32" r="30" fill="#ffffff" />
+    <image
+      href="${launcherBadgeLogoUrl}"
+      x="8"
+      y="8"
+      width="48"
+      height="48"
+      preserveAspectRatio="xMidYMid slice"
+      clip-path="url(#ifly-launcher-clip)"
+    />
   </svg>
 `;
 
 const launcherCloseSvg = `
-  <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+  <svg viewBox="0 0 64 64" width="64" height="64" aria-hidden="true">
+    <circle cx="32" cy="32" r="30" fill="#3252cf" />
     <path
-      fill="currentColor"
-      d="M6.4 5 5 6.4 10.6 12 5 17.6 6.4 19l5.6-5.6 5.6 5.6 1.4-1.4-5.6-5.6L19 6.4 17.6 5 12 10.6 6.4 5Z"
+      fill="#ffffff"
+      d="M24.53 22.4 22.4 24.53 29.87 32l-7.47 7.47 2.13 2.13L32 34.13l7.47 7.47 2.13-2.13L34.13 32l7.47-7.47-2.13-2.13L32 29.87 24.53 22.4Z"
     />
   </svg>
 `;

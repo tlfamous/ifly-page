@@ -92,8 +92,8 @@ enegelai-bot {
   --enegelai-bot-message-user-color: rgb(255, 255, 255);
   --enegelai-bot-message-bot-background: var(--ifly-surface-soft);
   --enegelai-bot-message-bot-color: var(--ifly-ink);
-  --enegelai-bot-anchor-background: var(--ifly-blue);
-  --enegelai-bot-anchor-border-color: var(--ifly-blue);
+  --enegelai-bot-anchor-background: transparent;
+  --enegelai-bot-anchor-border-color: transparent;
   --enegelai-bot-anchor-color: rgb(255, 255, 255);
   --enegelai-bot-anchor-shadow-color: rgba(15, 23, 42, 0.18);
   --enegelai-bot-anchor-shadow-hower-color: rgba(15, 23, 42, 0.24);
@@ -268,6 +268,7 @@ enegelai-bot::part(anchor) {
   height: 64px;
   border-radius: 999px;
   box-shadow: var(--ifly-shadow-card);
+  background: transparent;
 }
 
 enegelai-bot::part(anchor-icon) {
