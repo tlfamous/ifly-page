@@ -4,34 +4,10 @@ const widgetConfig = {
   orgId: "ifly",
   botId: "obbcg68itx",
   logoUrl:
+    "https://cdn-production-products.iflyworld.com/new_ifly_logo_0733585332.png",
+  popupLogoUrl:
     "https://storage.googleapis.com/c7o-yagi5wlved-cdn/ifly/logos/mmy0kbo41w_iFLY%20Logopng",
 };
-
-const headerLogoSvg = `
-  <svg viewBox="0 0 340 84" width="170" height="42" aria-hidden="true">
-    <g transform="translate(0 6)">
-      <path
-        fill="#ef3b3f"
-        d="M39 30c0-8.5 6.7-15.5 15-15.5c6 0 11.2 3.2 13.8 8.1c4.9-2 12.5-7.3 21-16.6c0.8-0.9 2.2 0.2 1.5 1.2C85.7 18 82.5 26 80.8 33.4c-4.7 21.2-19.9 32.1-43.3 32.1c-10 0-20.6-2.3-31.7-7.1c-1.4-0.6-0.8-2.6 0.7-2.3c6.4 1.4 12.2 2 17.3 2c17.2 0 28.6-6.8 34.2-20.5c-1.4 3.4-4.9 5.8-8.9 5.8C43.7 43.4 39 37.4 39 30Z"
-      />
-      <circle cx="55" cy="17" r="9.5" fill="#ef3b3f" />
-      <path
-        fill="#153b7a"
-        d="M107 10h13v53h-13zm22 0h15v15h-15zm0 22h15v31h-15zm25-22h53v12h-20v41h-13V22h-20zm61 0h53v12h-40v8h36v12h-36v9h41v12h-54zm61 0h53c8.8 0 16 7.2 16 16v37h-13V26c0-2.2-1.8-4-4-4h-39zm0 28h36v25h-13V50h-23z"
-      />
-      <text
-        x="322"
-        y="14"
-        fill="#153b7a"
-        font-family="Inter, system-ui, sans-serif"
-        font-size="11"
-        font-weight="700"
-      >
-        ®
-      </text>
-    </g>
-  </svg>
-`;
 
 const launcherOpenSvg = `
   <svg viewBox="0 0 64 64" width="64" height="64" aria-hidden="true">
@@ -95,8 +71,8 @@ function mountBotWidget() {
   element.setAttribute("url", widgetConfig.url);
   element.setAttribute("org-id", widgetConfig.orgId);
   element.setAttribute("bot-id", widgetConfig.botId);
-  element.setAttribute("logo-svg", headerLogoSvg.trim());
-  element.setAttribute("popup-logo-url", widgetConfig.logoUrl);
+  element.setAttribute("logo-url", widgetConfig.logoUrl);
+  element.setAttribute("popup-logo-url", widgetConfig.popupLogoUrl);
   element.setAttribute("anchor-open-svg", launcherOpenSvg.trim());
   element.setAttribute("anchor-close-svg", launcherCloseSvg.trim());
   document.body.appendChild(element);
