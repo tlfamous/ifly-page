@@ -1,0 +1,89 @@
+:root {
+  color-scheme: light;
+  font-family: "Poppins", sans-serif;
+  --ifly-surface: rgba(243, 244, 246, 0.78);
+  --ifly-surface-hover: rgba(243, 244, 246, 0.92);
+  --ifly-border: rgba(255, 255, 255, 0.4);
+  --ifly-text: #4b5563;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background: #ffffff;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.page-shell {
+  position: relative;
+}
+
+.page-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.clear-conversation-button {
+  position: fixed;
+  right: clamp(1rem, 6vw, 6.25rem);
+  bottom: clamp(1rem, 3vw, 1.875rem);
+  z-index: 10;
+  border: 1px solid var(--ifly-border);
+  border-radius: 999px;
+  padding: 0.7rem 1.2rem;
+  background: var(--ifly-surface);
+  color: var(--ifly-text);
+  font: 600 0.95rem/1 "Poppins", sans-serif;
+  cursor: pointer;
+  -webkit-backdrop-filter: saturate(140%) blur(6px);
+  backdrop-filter: saturate(140%) blur(6px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition:
+    background-color 0.2s ease,
+    transform 0.15s ease,
+    box-shadow 0.25s ease;
+}
+
+.clear-conversation-button:hover {
+  background: var(--ifly-surface-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.12);
+}
+
+.clear-conversation-button:focus-visible {
+  outline: 3px solid rgba(50, 82, 207, 0.3);
+  outline-offset: 3px;
+}
+
+enegelai-bot {
+  --enegelai-bot-header-background: #000000;
+  --enegelai-bot-header-color: rgba(255, 255, 255, 1);
+  --enegelai-bot-message-user-background: #3252cf;
+  --enegelai-bot-message-user-color: rgba(255, 255, 255, 1);
+  --enegelai-bot-message-bot-background: #dfe3e8;
+  --enegelai-bot-message-bot-color: rgba(0, 0, 0, 1);
+  --enegelai-bot-anchor-background: rgba(0, 0, 0, 1);
+  --enegelai-bot-anchor-border-color: rgba(209, 0, 0, 1);
+  --enegelai-bot-form-submit-background: #d5dbf5;
+  --enegelai-bot-form-submit-border: #d5dbf5;
+  --enegelai-bot-popup-min-height: 60px;
+}
+
+@media (max-width: 768px) {
+  .clear-conversation-button {
+    right: 1rem;
+    bottom: 1rem;
+    padding: 0.65rem 1rem;
+    font-size: 0.9rem;
+  }
+}
