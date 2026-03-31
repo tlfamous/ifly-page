@@ -49,7 +49,7 @@ body {
 
 .clear-conversation-button {
   position: fixed;
-  right: clamp(1rem, 6vw, 6.25rem);
+  left: clamp(1rem, 4vw, 2rem);
   bottom: clamp(1rem, 3vw, 1.875rem);
   z-index: 10;
   border: 1px solid var(--ifly-border);
@@ -118,7 +118,7 @@ enegelai-bot::part(wrapper) {
 }
 
 enegelai-bot::part(header) {
-  padding: 1rem 1.25rem;
+  padding: 0.95rem 1.15rem;
   border-bottom: 1px solid rgba(26, 27, 35, 0.08);
   background: linear-gradient(
     180deg,
@@ -129,21 +129,18 @@ enegelai-bot::part(header) {
 }
 
 enegelai-bot::part(header-logo) {
-  width: 52px;
-  height: 52px;
-  border-radius: 16px;
-  padding: 0.3rem;
-  background: #fff;
-  border: 1px solid rgba(26, 27, 35, 0.08);
-  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+  width: 170px;
+  min-width: 170px;
+  height: 42px;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 enegelai-bot::part(header-title) {
-  color: var(--ifly-ink);
-  font-family: var(--ifly-font-sans);
-  font-size: 1.05rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
+  display: none;
 }
 
 enegelai-bot::part(header-close) {
@@ -266,15 +263,15 @@ enegelai-bot::part(anchor-icon) {
 }
 
 enegelai-bot::part(anchor) {
-  width: auto;
-  min-width: 176px;
-  height: 56px;
-  border-radius: var(--ifly-radius-pill);
+  width: 64px;
+  min-width: 64px;
+  height: 64px;
+  border-radius: 999px;
   box-shadow: var(--ifly-shadow-card);
 }
 
 enegelai-bot::part(anchor-icon) {
-  padding-inline: 1.1rem;
+  padding: 0;
 }
 
 enegelai-bot::part(anchor-badge) {
@@ -298,15 +295,16 @@ enegelai-bot::part(form-submit) {
 
 @media (max-width: 768px) {
   .clear-conversation-button {
-    right: 1rem;
+    left: 1rem;
     bottom: 1rem;
     padding: 0.65rem 1rem;
     font-size: 0.9rem;
   }
 
   enegelai-bot::part(anchor) {
-    min-width: 160px;
-    height: 52px;
+    width: 60px;
+    min-width: 60px;
+    height: 60px;
   }
 
   enegelai-bot::part(wrapper) {

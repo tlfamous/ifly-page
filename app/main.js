@@ -1,5 +1,5 @@
 const widgetConfig = {
-  name: "iFLY",
+  name: "",
   url: "bot-service.enegel.ai",
   orgId: "ifly",
   botId: "obbcg68itx",
@@ -7,28 +7,42 @@ const widgetConfig = {
     "https://storage.googleapis.com/c7o-yagi5wlved-cdn/ifly/logos/mmy0kbo41w_iFLY%20Logopng",
 };
 
+const headerLogoSvg = `
+  <svg viewBox="0 0 340 84" width="170" height="42" aria-hidden="true">
+    <g transform="translate(0 6)">
+      <path
+        fill="#ef3b3f"
+        d="M39 30c0-8.5 6.7-15.5 15-15.5c6 0 11.2 3.2 13.8 8.1c4.9-2 12.5-7.3 21-16.6c0.8-0.9 2.2 0.2 1.5 1.2C85.7 18 82.5 26 80.8 33.4c-4.7 21.2-19.9 32.1-43.3 32.1c-10 0-20.6-2.3-31.7-7.1c-1.4-0.6-0.8-2.6 0.7-2.3c6.4 1.4 12.2 2 17.3 2c17.2 0 28.6-6.8 34.2-20.5c-1.4 3.4-4.9 5.8-8.9 5.8C43.7 43.4 39 37.4 39 30Z"
+      />
+      <circle cx="55" cy="17" r="9.5" fill="#ef3b3f" />
+      <path
+        fill="#153b7a"
+        d="M107 10h13v53h-13zm22 0h15v15h-15zm0 22h15v31h-15zm25-22h53v12h-20v41h-13V22h-20zm61 0h53v12h-40v8h36v12h-36v9h41v12h-54zm61 0h53c8.8 0 16 7.2 16 16v37h-13V26c0-2.2-1.8-4-4-4h-39zm0 28h36v25h-13V50h-23z"
+      />
+      <text
+        x="322"
+        y="14"
+        fill="#153b7a"
+        font-family="Inter, system-ui, sans-serif"
+        font-size="11"
+        font-weight="700"
+      >
+        ®
+      </text>
+    </g>
+  </svg>
+`;
+
 const launcherOpenSvg = `
-  <svg viewBox="0 0 176 40" width="176" height="40" aria-hidden="true">
-    <rect width="176" height="40" rx="20" fill="none" />
-    <path
-      fill="currentColor"
-      d="M24.5 11c-3.03 0-5.5 2.47-5.5 5.5v3c0 3.03 2.47 5.5 5.5 5.5S30 22.53 30 19.5v-3c0-3.03-2.47-5.5-5.5-5.5Zm0 2c1.93 0 3.5 1.57 3.5 3.5v3c0 1.93-1.57 3.5-3.5 3.5S21 21.43 21 19.5v-3c0-1.93 1.57-3.5 3.5-3.5Z"
-    />
-    <path
-      fill="currentColor"
-      d="M32.75 18.5a1 1 0 0 0-1 1 7.25 7.25 0 0 1-14.5 0 1 1 0 0 0-2 0 9.26 9.26 0 0 0 8.25 9.2V32a1 1 0 1 0 2 0v-3.3a9.26 9.26 0 0 0 8.25-9.2 1 1 0 0 0-1-1Z"
-    />
-    <text
-      x="54"
-      y="25"
-      fill="currentColor"
-      font-family="Inter, system-ui, sans-serif"
-      font-size="14"
-      font-weight="600"
-      letter-spacing="0"
-    >
-      Chat with iFLY
-    </text>
+  <svg viewBox="0 0 64 64" width="64" height="64" aria-hidden="true">
+    <circle cx="32" cy="32" r="32" fill="none" />
+    <g transform="translate(6 10) scale(0.6)">
+      <path
+        fill="#ef3b3f"
+        d="M39 30c0-8.5 6.7-15.5 15-15.5c6 0 11.2 3.2 13.8 8.1c4.9-2 12.5-7.3 21-16.6c0.8-0.9 2.2 0.2 1.5 1.2C85.7 18 82.5 26 80.8 33.4c-4.7 21.2-19.9 32.1-43.3 32.1c-10 0-20.6-2.3-31.7-7.1c-1.4-0.6-0.8-2.6 0.7-2.3c6.4 1.4 12.2 2 17.3 2c17.2 0 28.6-6.8 34.2-20.5c-1.4 3.4-4.9 5.8-8.9 5.8C43.7 43.4 39 37.4 39 30Z"
+      />
+      <circle cx="55" cy="17" r="9.5" fill="#ef3b3f" />
+    </g>
   </svg>
 `;
 
@@ -81,7 +95,7 @@ function mountBotWidget() {
   element.setAttribute("url", widgetConfig.url);
   element.setAttribute("org-id", widgetConfig.orgId);
   element.setAttribute("bot-id", widgetConfig.botId);
-  element.setAttribute("logo-url", widgetConfig.logoUrl);
+  element.setAttribute("logo-svg", headerLogoSvg.trim());
   element.setAttribute("popup-logo-url", widgetConfig.logoUrl);
   element.setAttribute("anchor-open-svg", launcherOpenSvg.trim());
   element.setAttribute("anchor-close-svg", launcherCloseSvg.trim());
